@@ -1,0 +1,66 @@
+==========
+dyn_fields
+==========
+
+.. js:function:: dyn_fields()
+
+**domain**: client 
+
+**language**: javascript
+
+**class** :doc:`Item class </refs/client/item_api>`
+
+Description
+===========
+
+Use ``dyn_fields`` to add dynamic fields to an item based on the fields parameter.
+The fields parameter is a list of field definitions. They must be the same that are passed from 
+the server for an item to create fields on the client.
+
+
+Example
+=======
+
+
+.. code-block:: js
+
+        function on_view_form_created(item) {
+            let d_fields = [
+                    {
+                        field_name: 'string_field',
+                        field_caption: 'String field',
+                        data_type: task.consts.TEXT,
+                        field_size: 100,
+                        required: true
+                    },
+                    {
+                        field_name: 'integer_field',
+                        field_caption: 'Integer field',
+                        data_type: task.consts.INTEGER
+                    },
+                    {
+                        field_name: 'lookup_field',
+                        field_caption: 'Lookup field',
+                        data_type: task.consts.INTEGER,
+                        lookup_item: task.customers,
+                        lookup_field: 'lastname'
+                    },
+                ];
+            item.dyn_fields(d_fields);
+            item.view_options.fields = ['string_field', 'integer_field', 'lookup_field'];
+            item.edit_options.fields = ['string_field', 'integer_field', 'lookup_field'];    
+            item.open();
+        }
+
+
+.. Comment
+
+.. image:: /how_to/_images/dyn_fields.png
+	:align: center
+	:alt: dyn_fields.png
+
+
+See also
+========
+
+:doc:`fields <at_fields>`
