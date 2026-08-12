@@ -18,11 +18,23 @@ Use ``value`` property to get or set the value of the filter.
 Example
 =======
 
-.. code-block:: js
+.. code-block:: py
 
-    function on_view_form_created(item) {
-        item.filters.invoicedate1.value = new Date(new Date().setYear(new Date().getFullYear() - 1));
-    }
+    from datetime import datetime
+
+    def test(invoices):
+        date = datetime.now()
+        date = date.replace(year=date.year-1)
+
+        invoices.clear_filters()
+        invoices.filters.invoicedate1.value = date
+
+        invoices.open(where={'invoicedate__ge': date})
+
+        invoices.set_where(invoicedate__ge=date)
+        invoices.open()
+
+        invoices.open()
 
 
 See also
