@@ -23,7 +23,7 @@ When the
 attribute of the report is specified, this value is set by the 
 :doc:`generate <m_generate>` 
 method after it save generated content. Otherwise a developer must set it 
-himself.
+manually.
 
 See also
 ========
