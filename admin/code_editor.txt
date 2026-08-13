@@ -24,7 +24,7 @@ To the left of the **Editor** there is an information pane with four tabs:
   double-click on one of them to move the cursor to the proper function. 
 * **Events** - displays all the published event of the item, double-click to 
   add a wrapper for the event at the current cursor position (see the 
-  on_before_post event on the figure above).
+  events on the figure below added to Demo\Invoices).
 * **Task** - the 
   :doc:`task tree </programming/task_tree>`, 
   double-click on the node to enter the item_name at the current cursor position.

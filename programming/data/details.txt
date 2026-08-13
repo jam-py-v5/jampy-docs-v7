@@ -36,7 +36,7 @@ will print::
 In Jam.py v5, Details have two 
 :doc:`common fields <common_fields>` -
 ``master_id`` and ``master_rec_id``, that are used to store information about the 
-``ID`` of the master (each item have its own unique ID) and the value of the primary 
+``ID`` of the master (each item has its own unique ID) and the value of the primary 
 field of the record of its master. This way each table can be linked to several 
 items. As well as each item can have several details. To get access to details of 
 an item use its ``details`` attribute. To get access to the master of the detail 
